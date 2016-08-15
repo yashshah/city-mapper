@@ -1,13 +1,13 @@
 import 'materialize-css/dist/css/materialize.min.css';
 import React from 'react';
 import { render } from 'react-dom';
-import {ServiceDisruptionForm} from './components/ServiceDisruptionForm'
+import {ServiceDisruptionPage} from './components/ServiceDisruptionPage'
 
 class App extends React.Component {
   render() {
     return(
       <div>
-        <ServiceDisruptionForm / >
+        <ServiceDisruptionPage / >
       </div>
     )
   }
