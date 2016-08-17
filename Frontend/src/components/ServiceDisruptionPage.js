@@ -7,6 +7,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
+import { Link } from 'react-router'
 
 const muiTheme = getMuiTheme({
   palette: {
@@ -33,7 +34,7 @@ export class ServiceDisruptionPage extends Component {
           <div>
             <AppBar />
             <div className="container">
-              <ServiceDisruptionList />
+              {this.props.children}
             </div>
              <FloatingActionButton style={style}>
               <ContentAdd />
