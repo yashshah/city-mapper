@@ -5,6 +5,8 @@ import {ServiceDisruptionForm} from './ServiceDisruptionForm'
 import AppBar from './AppBar'
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
 
 const muiTheme = getMuiTheme({
   palette: {
@@ -12,6 +14,12 @@ const muiTheme = getMuiTheme({
   },
 });
 
+const style = {
+  bottom:'40px',
+  position:'fixed',
+  right:'40px',
+  zIndex:'998',
+};
 export class ServiceDisruptionPage extends Component {
   constructor(props) {
     super(props);
@@ -27,6 +35,9 @@ export class ServiceDisruptionPage extends Component {
             <div className="container">
               <ServiceDisruptionList />
             </div>
+             <FloatingActionButton style={style}>
+              <ContentAdd />
+            </FloatingActionButton>
           </div>
         </MuiThemeProvider>
       </div>
