@@ -16,9 +16,11 @@
   "license": "MIT",
   "homepage": "https://github.com/alicoding/react-webpack-babel#readme",
   "dependencies": {
+    "material-ui": "^0.15.4",
     "materialize-css": "0.97.7",
     "react": "15.3.0",
-    "react-dom": "15.3.0"
+    "react-dom": "15.3.0",
+    "react-tap-event-plugin": "^1.0.0"
   },
   "devDependencies": {
     "babel-core": "6.13.2",
