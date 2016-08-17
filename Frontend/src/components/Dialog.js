@@ -44,7 +44,6 @@ export class Dialog extends Component {
       <FlatButton
         label="Yes, Delete!"
         secondary={true}
-        keyboardFocused={true}
         onTouchTap={this.handleDelete}
       />,
     ];
