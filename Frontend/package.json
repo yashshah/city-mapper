@@ -5,7 +5,7 @@
   "main": "''",
   "scripts": {
     "build": "webpack --config webpack.production.config.js --progress --profile --colors",
-    "start": "webpack-dev-server --progress --profile --colors",
+    "start": "webpack-dev-server --profile --colors",
     "lint": "eslint --ext js --ext jsx src || exit 0"
   },
   "repository": {
@@ -36,6 +36,7 @@
     "url-loader": "0.5.7",
     "webpack": "1.13.1",
     "webpack-cleanup-plugin": "^0.2.0",
+    "webpack-dashboard": "0.0.1",
     "webpack-dev-server": "1.14.1"
   }
 }

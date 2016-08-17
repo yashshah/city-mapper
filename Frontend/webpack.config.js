@@ -3,6 +3,9 @@ var webpack = require('webpack');
 var path = require('path');
 var loaders = require('./webpack.loaders');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var Dashboard = require('webpack-dashboard');
+var DashboardPlugin = require('webpack-dashboard/plugin');
+var dashboard = new Dashboard();
 
 const HOST = process.env.HOST || "127.0.0.1";
 const PORT = process.env.PORT || "8888";
@@ -45,6 +48,7 @@ module.exports = {
 		contentBase: "./public",
 		// do not print bundle build stats
 		noInfo: true,
+		quiet: true,
 		// enable HMR
 		hot: true,
 		// embed the webpack-dev-server runtime into the bundle
@@ -55,6 +59,7 @@ module.exports = {
 		host: HOST
 	},
 	plugins: [
+		new DashboardPlugin(dashboard.setData),
 		new webpack.NoErrorsPlugin(),
 		new webpack.HotModuleReplacementPlugin(),
 		new HtmlWebpackPlugin({
