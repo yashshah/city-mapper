@@ -58,15 +58,32 @@ const serviceDisruptionData = [
 export class ServiceDisruptionList extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      deleteDialogOpen: false,
+      items: serviceDisruptionData
+    }
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
+
+  handleDelete(data){
+    let updatedItems = this.state.items;
+    updatedItems = updatedItems.filter(function( obj ) {
+        return obj.title !== data.title;
+    });
+    this.setState({
+      deleteDialogOpen: false,
+      items: updatedItems
+    });
+
+  }
 
   render() {
     return(
       <div className="row">
-        {serviceDisruptionData.map((data) => (
+        {this.state.items.map((data) => (
           <div className="col s12 m12" key={data.title} style={styles.gridList}>
-            <CardItem data={data} />
+            <CardItem data={data} onDelete={this.handleDelete} />
           </div>
         ))}
       </div>

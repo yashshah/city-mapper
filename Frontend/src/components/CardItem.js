@@ -27,7 +27,7 @@ export class CardItem extends Component {
   }
 
   handleDelete(data){
-    // Logic for deleting the object
+    this.props.onDelete(data);
     this.setState({
       deleteDialogOpen: false
     });
