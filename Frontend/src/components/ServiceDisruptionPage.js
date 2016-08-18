@@ -11,7 +11,7 @@ import { Link } from 'react-router'
 
 const muiTheme = getMuiTheme({
   palette: {
-    primary1Color: '#3498db',
+    primary1Color: '#2196F3',
   },
 });
 
