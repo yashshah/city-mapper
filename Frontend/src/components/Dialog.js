@@ -14,20 +14,21 @@ export class Dialog extends Component {
     super(props);
   
     this.state = {
-      open: this.props.open
+      open: false
     };
     this.handleClose = this.handleClose.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log("Insde componentDidUpdate")
-    this.setState({open: nextProps.open});
+    if (nextProps.open)
+      this.setState({open: true});
   }
 
   handleClose() {
     this.setState({open: false});
-  };
+    this.props.onClose();
+  }
 
   handleDelete(){
     this.props.onDelete();

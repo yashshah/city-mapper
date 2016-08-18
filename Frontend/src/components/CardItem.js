@@ -18,6 +18,7 @@ export class CardItem extends Component {
         deleteDialogOpen: false,
     }
     this.showDeleteDialog = this.showDeleteDialog.bind(this);
+    this.closeDeleteDialog = this.closeDeleteDialog.bind(this)
   }
 
   showDeleteDialog(){
@@ -26,11 +27,14 @@ export class CardItem extends Component {
     });
   }
 
+  closeDeleteDialog(){
+    this.setState({
+      deleteDialogOpen: false,
+    });
+  }
+
   handleDelete(data){
     this.props.onDelete(data);
-    this.setState({
-      deleteDialogOpen: false
-    });
   }
 
   render() {
@@ -38,7 +42,7 @@ export class CardItem extends Component {
     let subtitle = this.props.data.subtitle
     return(
       <Card>
-        <Dialog onDelete={this.handleDelete.bind(this, this.props.data)} open={this.state.deleteDialogOpen} />
+        <Dialog onDelete={this.handleDelete.bind(this, this.props.data)} onClose={this.closeDeleteDialog} open={this.state.deleteDialogOpen} />
         <CardHeader
           title={title}
           avatar="http://www.ttc.ca/images/schedules_maps/line_one.png"
