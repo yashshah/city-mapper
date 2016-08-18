@@ -36,7 +36,9 @@ export class ServiceDisruptionPage extends Component {
             <div className="container">
               {this.props.children}
             </div>
-             <FloatingActionButton style={style}>
+             <FloatingActionButton 
+                containerElement={<Link to="/add" />}
+                style={style}>
               <ContentAdd />
             </FloatingActionButton>
           </div>
