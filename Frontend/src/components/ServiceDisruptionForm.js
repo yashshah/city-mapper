@@ -16,17 +16,16 @@ export class ServiceDisruptionForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      line: null || parseInt(props.location.query.line),
-      fromStation: null || parseInt(props.location.query.fromStation),
-      toStation: null || parseInt(props.location.query.toStation),
+      line: props.location.query.line ? parseInt(props.location.query.line) : null,
+      fromStation: props.location.query.fromStation ? parseInt(props.location.query.fromStation -1) : null,
+      toStation: props.location.query.toStation ? parseInt(props.location.query.toStation -1) : null,
       description: '' || props.location.query.description
     };
     this.addDisruption = this.addDisruption.bind(this);
   }
 
   addDisruption(){
-    console.log(this.state.description, this.state.fromStation)
-
+    this.props.onSubmit(this.state);
   }
 
   handleChange(key, e, index, value){
