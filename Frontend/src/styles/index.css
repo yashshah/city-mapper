@@ -4,15 +4,6 @@ body,
   height: 100%;
 }
 
-.container-table {
-  display: table;
-}
-
-.vertical-center-row {
-  display: table-cell;
-  vertical-align: middle;
-}
-
 .progress-bar {
   margin:0px;
   display:none;
@@ -28,6 +19,18 @@ body,
     margin-top:-100px;
 }
 
+label {
+  font-size: 1.1rem !important;
+}
+
+/*Service Form CSS*/
+.service-form-head{
+  margin-top: 30px;
+}
+
+.service-form-body{
+  padding: 0px 20px;
+}
 
 /*Station View CSS*/
 .timeline {
