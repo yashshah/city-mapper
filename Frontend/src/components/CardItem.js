@@ -81,7 +81,11 @@ export class CardItem extends Component {
         </CardActions>
         <CardText expandable={true}>
           {description}
-          <StationView />
+          <StationView 
+            line = {this.props.data.line}
+            fromStation = {this.props.data.fromStation}
+            toStation = {this.props.data.toStation}
+          />
         </CardText>
       </Card>
     )
