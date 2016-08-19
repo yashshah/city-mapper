@@ -40,7 +40,7 @@ label {
   position: relative;
 }
 
-.entry {
+.entry, .disrupted{
   display: inline-block;
   vertical-align: top;
   font-size: 12px;
@@ -50,7 +50,6 @@ label {
   max-width: 500px;
 }
 
-
 .entry:after {
   content: '';
   display: block;
@@ -59,6 +58,20 @@ label {
   height: 7px;
   border-radius: 6px;
   border: 6px solid #aaa;
+  position: absolute;
+  left: 50%;
+  top: -25px;
+  margin-left: -7px;
+}
+
+.disrupted:after {
+  content: '';
+  display: block;
+  background: #e74c3c;
+  width: 7px;
+  height: 7px;
+  border-radius: 6px;
+  border: 6px solid #e74c3c;
   position: absolute;
   left: 50%;
   top: -25px;
@@ -77,11 +90,27 @@ label {
   margin-left: -4px;
 }
 
-.entry p {
+.disrupted:before {
+  content: '';
+  display: block;
+  background: #e74c3c;
+  width: 5px;
+  height: 20px;
+  position: absolute;
+  left: 50%;
+  top: -14px;
+  margin-left: -4px;
+}
+
+.entry, .disrupted p {
   font-size: 18px;
   margin-bottom: 10px;
   margin-right: 4px;
   line-height: 0.5;
+}
+
+.disrupted p{
+  color: #e74c3c;
 }
 
 .bar {
