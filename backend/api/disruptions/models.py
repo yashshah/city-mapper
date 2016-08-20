@@ -12,4 +12,4 @@ class Disruption(models.Model):
   description = models.TextField()
  
   class Meta:
-    ordering = ('created',)
+    ordering = ('-created',)
