@@ -26,7 +26,11 @@ pip install -r requirements.txt
 python manage.py runserver
 ```    
 
-## Setting up Frontend
+You're all set! Server is running on [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
+
+## Setting up Frontend    
+
+Frontend is designed using material-ui. To run it, go through the following steps:    
 
 
 ### Install the node packages by running following command:
@@ -47,15 +51,15 @@ npm run build
 ```    
 
 
-![alt tag](http://g.recordit.co/ZYZKIlCXGc.gif)    
+![http://g.recordit.co/ZYZKIlCXGc.gif](http://g.recordit.co/ZYZKIlCXGc.gif)    
 
 ### Responsive
 
-![alt tag](http://g.recordit.co/gWJPnOujOo.gif)      
+![http://g.recordit.co/gWJPnOujOo.gif](http://g.recordit.co/gWJPnOujOo.gif)      
 
 ## Error Handling
 
-![alt tag](http://g.recordit.co/BD0Ux8fyIN.gif)      
+![http://g.recordit.co/BD0Ux8fyIN.gif](http://g.recordit.co/BD0Ux8fyIN.gif)      
 
 
 
