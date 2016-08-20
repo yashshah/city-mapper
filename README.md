@@ -50,7 +50,7 @@ Frontend module be viewed at [http://localhost:8888](http://localhost:8888).
 npm run build
 ```    
 
-
+[http://g.recordit.co/ZYZKIlCXGc.gif](http://g.recordit.co/ZYZKIlCXGc.gif)    
 ![http://g.recordit.co/ZYZKIlCXGc.gif](http://g.recordit.co/ZYZKIlCXGc.gif)    
 
 ### Responsive
@@ -58,7 +58,7 @@ npm run build
 ![http://g.recordit.co/gWJPnOujOo.gif](http://g.recordit.co/gWJPnOujOo.gif)      
 
 ## Error Handling
-
+[http://g.recordit.co/BD0Ux8fyIN.gif](http://g.recordit.co/BD0Ux8fyIN.gif)          
 ![http://g.recordit.co/BD0Ux8fyIN.gif](http://g.recordit.co/BD0Ux8fyIN.gif)      
 
 
