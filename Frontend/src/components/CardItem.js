@@ -64,7 +64,8 @@ export class CardItem extends Component {
       description: this.props.data.description,
     }
     let link = <Link to={{ pathname: '/add', query: query }}/>
-    let description = this.props.data.description
+    let description = this.props.data.description;
+    let avatarLink = require(`../images/line${this.props.data.line}.png`);
     return(
       <Card>
         <Dialog
@@ -74,7 +75,7 @@ export class CardItem extends Component {
         />
         <CardHeader
           title={title}
-          avatar="http://www.ttc.ca/images/schedules_maps/line_one.png"
+          avatar={avatarLink}
           subtitle={subtitle}
           actAsExpander={true}
           showExpandableButton={true}
