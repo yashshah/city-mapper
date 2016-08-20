@@ -45,7 +45,7 @@ export class ServiceDisruptionForm extends Component {
     
     if (this.state.line) {
       stations = data.routes[this.state.line - 1].branches.map((station,i) => {
-        return <MenuItem value={i} key={i} primaryText={station.name} />
+        return <MenuItem value={station.id} key={station.id} primaryText={station.name} />
       })
     }
 
