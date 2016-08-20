@@ -46,7 +46,7 @@ export class ServiceDisruptionForm extends Component {
       axios({
         url: config.serverPath + self.state.id,
         data: this.state,
-        method: 'post',
+        method: self.state.id ? 'put' : 'post',
         headers: {
           'Authorization': 'Basic ' + (new Buffer(config.username + ':' + config.password).toString('base64'))
         },
