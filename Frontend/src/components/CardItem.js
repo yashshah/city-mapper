@@ -48,7 +48,6 @@ export class CardItem extends Component {
       return item[key] == value;
     });
     return row[0].name
-
   }
 
   render() {
@@ -58,6 +57,7 @@ export class CardItem extends Component {
     let title = `Disconnection between ${fromStation} and ${toStation}` 
     let subtitle = line
     let query = {
+      id: this.props.data.id,
       line: this.props.data.line,
       fromStation: this.props.data.fromStation,
       toStation: this.props.data.toStation,
@@ -67,7 +67,11 @@ export class CardItem extends Component {
     let description = this.props.data.description
     return(
       <Card>
-        <Dialog onDelete={this.handleDelete.bind(this, this.props.data)} onClose={this.closeDeleteDialog} open={this.state.deleteDialogOpen} />
+        <Dialog
+          onDelete={this.handleDelete.bind(this, this.props.data)}
+          onClose={this.closeDeleteDialog}
+          open={this.state.deleteDialogOpen}
+        />
         <CardHeader
           title={title}
           avatar="http://www.ttc.ca/images/schedules_maps/line_one.png"
