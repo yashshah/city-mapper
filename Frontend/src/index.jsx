@@ -14,8 +14,7 @@ class App extends React.Component {
       <Router history={browserHistory}>
         <Route path="/" component={ServiceDisruptionPage}>
           <IndexRoute component={ServiceDisruptionList} />
-          <Route path="add" component={ManageServiceDisruption}>
-          </Route>
+          <Route path="add" component={ManageServiceDisruption} />
         </Route>
       </Router>
     )
