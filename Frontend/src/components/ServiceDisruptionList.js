@@ -7,17 +7,7 @@ import {ListItem} from './helper/ListItem';
 import axios from 'axios'
 import config from '../config.js'
 import Snackbar from 'material-ui/Snackbar';
-
-const styles = {
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
-  },
-  gridList: {
-    paddingTop: '20px',
-  },
-};
+import styles from '../styles/styles.js'
 
 export class ServiceDisruptionList extends Component {
   constructor(props) {

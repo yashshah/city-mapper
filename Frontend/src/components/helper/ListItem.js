@@ -5,16 +5,7 @@ import {StationView} from './StationView'
 import {Dialog} from './Dialog'
 import { Link } from 'react-router'
 import data from '../../routes-data.js';
-
-const styles = {
-  cardButtons: {
-    paddingTop: '0px',
-  },
-  editButton: {
-    top: "12px",
-  }
-};
-
+import styles from '../../styles/styles.js'
 
 export class ListItem extends Component {
   constructor(props) {

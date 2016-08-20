@@ -8,6 +8,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import { Link } from 'react-router'
+import styles from '../styles/styles.js'
 
 const muiTheme = getMuiTheme({
   palette: {
@@ -15,12 +16,6 @@ const muiTheme = getMuiTheme({
   },
 });
 
-const style = {
-  bottom:'40px',
-  position:'fixed',
-  right:'40px',
-  zIndex:'998',
-};
 export class ServiceDisruptionPage extends Component {
   constructor(props) {
     super(props);
@@ -38,7 +33,7 @@ export class ServiceDisruptionPage extends Component {
             </div>
              <FloatingActionButton 
                 containerElement={<Link to="/add" />}
-                style={style}>
+                style={styles.addButton}>
               <ContentAdd />
             </FloatingActionButton>
           </div>

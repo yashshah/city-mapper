@@ -8,15 +8,8 @@ import Snackbar from 'material-ui/Snackbar';
 import data from '../routes-data.js';
 import axios from 'axios'
 import config from '../config.js'
-
+import styles from '../styles/styles.js'
 var Router = require('react-router');
-
-const styles = {
-  customWidth: {
-    width: "100%",
-  },
-};
-
 
 export class ServiceDisruptionForm extends Component {
   constructor(props) {
@@ -118,7 +111,7 @@ export class ServiceDisruptionForm extends Component {
                     value={this.state.line}
                     onChange={this.handleChange.bind(this, 'line')}
                     floatingLabelText="Select Line"
-                    style={styles.customWidth}
+                    style={styles.customWidthTextField}
                   >
                     {lines}
                   </SelectField>
@@ -128,7 +121,7 @@ export class ServiceDisruptionForm extends Component {
                     value={this.state.fromStation}
                     onChange={this.handleChange.bind(this, 'fromStation')}
                     floatingLabelText="From Station"
-                    style={styles.customWidth}
+                    style={styles.customWidthTextField}
                   >
                     {stations}
                   </SelectField>
@@ -138,7 +131,7 @@ export class ServiceDisruptionForm extends Component {
                     value={this.state.toStation}
                     onChange={this.handleChange.bind(this, 'toStation')}
                     floatingLabelText="To Station"
-                    style={styles.customWidth}
+                    style={styles.customWidthTextField}
                   >
                     {stations}
                   </SelectField>
@@ -152,7 +145,7 @@ export class ServiceDisruptionForm extends Component {
                     value={this.state.description}
                     required={true}
                     multiLine={true}
-                    style={styles.customWidth}
+                    style={styles.customWidthTextField}
                     rows={4}
                   /><br />
                 </div>
