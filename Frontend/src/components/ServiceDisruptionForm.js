@@ -3,11 +3,12 @@ import { render } from 'react-dom';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import TextField from 'material-ui/TextField';
-import data from '../routes-data.js';
-import axios from 'axios'
-import config from './config.js'
 import RaisedButton from 'material-ui/RaisedButton';
 import Snackbar from 'material-ui/Snackbar';
+import data from '../routes-data.js';
+import axios from 'axios'
+import config from '../config.js'
+
 var Router = require('react-router');
 
 const styles = {

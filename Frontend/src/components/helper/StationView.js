@@ -1,11 +1,9 @@
 import React from 'react';
-import Appbar from 'material-ui/AppBar';
-import data from '../routes-data.js';
+import data from '../../routes-data.js';
 
 export const StationView = (props) => {
   let minElement =  Math.min(props.fromStation, props.toStation)
   let diffElement = Math.abs(props.fromStation - props.toStation)
-  console.log(minElement, diffElement)
   let disruptedStations = Array.from(new Array(diffElement + 1), (x,i) => i + minElement)
   let disruptedStationsNames = getName(data.routes[props.line -1].branches, "id", disruptedStations);
   return (

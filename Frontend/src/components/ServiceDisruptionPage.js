@@ -2,7 +2,7 @@ import { default as React, Component } from 'react';
 import { render } from 'react-dom';
 import {ServiceDisruptionList} from './ServiceDisruptionList'
 import {ServiceDisruptionForm} from './ServiceDisruptionForm'
-import AppBar from './AppBar'
+import AppBar from './helper/AppBar'
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import FloatingActionButton from 'material-ui/FloatingActionButton';

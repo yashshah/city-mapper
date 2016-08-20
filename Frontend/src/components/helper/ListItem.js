@@ -4,7 +4,7 @@ import FlatButton from 'material-ui/FlatButton';
 import {StationView} from './StationView'
 import {Dialog} from './Dialog'
 import { Link } from 'react-router'
-import data from '../routes-data.js';
+import data from '../../routes-data.js';
 
 const styles = {
   cardButtons: {
@@ -16,7 +16,7 @@ const styles = {
 };
 
 
-export class CardItem extends Component {
+export class ListItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -65,7 +65,7 @@ export class CardItem extends Component {
     }
     let link = <Link to={{ pathname: '/add', query: query }}/>
     let description = this.props.data.description;
-    let avatarLink = require(`../images/line${this.props.data.line}.png`);
+    let avatarLink = require(`../../images/line${this.props.data.line}.png`);
     return(
       <Card>
         <Dialog

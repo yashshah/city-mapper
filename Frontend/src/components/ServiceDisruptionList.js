@@ -3,9 +3,9 @@ import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import Subheader from 'material-ui/Subheader';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
-import {CardItem} from './CardItem';
+import {ListItem} from './helper/ListItem';
 import axios from 'axios'
-import config from './config.js'
+import config from '../config.js'
 import Snackbar from 'material-ui/Snackbar';
 
 const styles = {
@@ -98,7 +98,7 @@ export class ServiceDisruptionList extends Component {
       <div className="row">
         {this.state.items.map((data) => (
           <div className="col s12 m12" key={data.id} style={styles.gridList}>
-            <CardItem data={data} onDelete={this.handleDelete} />
+            <ListItem data={data} onDelete={this.handleDelete} />
           </div>
         ))}
         <Snackbar
