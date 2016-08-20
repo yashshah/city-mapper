@@ -4,6 +4,7 @@ import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import TextField from 'material-ui/TextField';
 import data from './data.js';
+import RaisedButton from 'material-ui/RaisedButton';
 
 const styles = {
   customWidth: {
@@ -20,6 +21,7 @@ export class ServiceDisruptionForm extends Component {
       fromStation: props.location.query.fromStation ? parseInt(props.location.query.fromStation -1) : null,
       toStation: props.location.query.toStation ? parseInt(props.location.query.toStation -1) : null,
       description: '' || props.location.query.description
+      submit: false,
     };
     this.addDisruption = this.addDisruption.bind(this);
   }
@@ -99,7 +101,12 @@ export class ServiceDisruptionForm extends Component {
                 </div>
               </div>
               <div className="row center ">
-                <a className="waves-effect waves-light btn-large blue center" onClick={this.addDisruption}>Add Service Disruption</a>
+                <RaisedButton
+                  label="Add Service Disruption"
+                  className="waves-effect waves-light"
+                  primary={true}
+                  onTouchTap={this.addDisruption}
+                  disabled={this.state.submit} />
               </div>
             </div>
           </div>
