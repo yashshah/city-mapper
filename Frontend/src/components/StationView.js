@@ -1,6 +1,6 @@
 import React from 'react';
 import Appbar from 'material-ui/AppBar';
-import data from './data.js';
+import data from '../routes-data.js';
 
 export const StationView = (props) => {
   let minElement =  Math.min(props.fromStation, props.toStation)

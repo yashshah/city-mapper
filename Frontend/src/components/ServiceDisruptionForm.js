@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import TextField from 'material-ui/TextField';
-import data from './data.js';
+import data from '../routes-data.js';
 import axios from 'axios'
 import config from './config.js'
 import RaisedButton from 'material-ui/RaisedButton';

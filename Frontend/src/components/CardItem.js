@@ -4,7 +4,7 @@ import FlatButton from 'material-ui/FlatButton';
 import {StationView} from './StationView'
 import {Dialog} from './Dialog'
 import { Link } from 'react-router'
-import data from './data.js';
+import data from '../routes-data.js';
 
 const styles = {
   cardButtons: {
