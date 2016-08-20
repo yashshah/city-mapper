@@ -4,8 +4,11 @@ import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import TextField from 'material-ui/TextField';
 import data from './data.js';
+import axios from 'axios'
+import config from './config.js'
 import RaisedButton from 'material-ui/RaisedButton';
 import Snackbar from 'material-ui/Snackbar';
+var Router = require('react-router');
 
 const styles = {
   customWidth: {
@@ -18,10 +21,11 @@ export class ServiceDisruptionForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      id: props.location.query.id ? parseInt(props.location.query.id) : '',
       line: props.location.query.line ? parseInt(props.location.query.line) : null,
-      fromStation: props.location.query.fromStation ? parseInt(props.location.query.fromStation -1) : null,
-      toStation: props.location.query.toStation ? parseInt(props.location.query.toStation -1) : null,
-      description: '' || props.location.query.description
+      fromStation: props.location.query.fromStation ? parseInt(props.location.query.fromStation) : null,
+      toStation: props.location.query.toStation ? parseInt(props.location.query.toStation) : null,
+      description: null || props.location.query.description,
       submit: false,
       toastOpen: false,
       toastMessage: ""
@@ -31,8 +35,51 @@ export class ServiceDisruptionForm extends Component {
   }
 
   addDisruption(){
-    this.props.onSubmit(this.state);
+    this.setState({
+      submit: true,
+    });
+    let self = this;
+    if(this.state.line && this.state.fromStation && this.state.toStation && this.state.description){
+      if(this.props.location.query){
+
+      }
+      axios({
+        url: config.serverPath + self.state.id,
+        data: this.state,
+        method: 'post',
+        headers: {
+          'Authorization': 'Basic ' + (new Buffer(config.username + ':' + config.password).toString('base64'))
+        },
+        json: true
+      })
+      .then(function (response) {
+        self.setState({
+          toastOpen: true,
+          toastMessage: "Service disruption saved!"
+        }, function(){
+          Router.browserHistory.push({
+            pathname: '/',
+            query: { submit: true },
+          });
+        });
+      })
+      .catch(function (error) {
+        self.setState({
+          toastOpen: true,
+          submit: false,
+          toastMessage: "Error submitting the request!"
+        });
+      });
+    }
+    else{
+      self.setState({
+        toastOpen: true,
+        submit: false,
+        toastMessage: "Please fill all the fields!"
+      });
+    }
   }
+  
   handleRequestClose(){
     this.setState({
       toastOpen: false,
