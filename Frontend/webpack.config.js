@@ -14,38 +14,38 @@ const PORT = process.env.PORT || "8888";
 loaders.push({
 	test: /[\/\\](node_modules|global)[\/\\].*\.css$/,
 	loaders: [
-		'style?sourceMap',
-		'css'
+	'style?sourceMap',
+	'css'
 	]
 });
 // local css modules
 loaders.push({
 	test: /[\/\\]src[\/\\].*\.css$/,
 	loaders: [
-		'style?sourceMap',
-		'css'
+	'style?sourceMap',
+	'css'
 	]
 });
 
 module.exports = {
 	entry: [
-		`webpack-dev-server/client?http://${HOST}:${PORT}`,
-		`webpack/hot/only-dev-server`,
+	`webpack-dev-server/client?http://${HOST}:${PORT}`,
+	`webpack/hot/only-dev-server`,
 		`./src/index.jsx` // Your appʼs entry point
-	],
-	devtool: process.env.WEBPACK_DEVTOOL || 'cheap-module-source-map',
-	output: {
-		path: path.join(__dirname, 'public'),
-		filename: 'bundle.js'
-	},
-	resolve: {
-		extensions: ['', '.js', '.jsx']
-	},
-	module: {
-		loaders
-	},
-	devServer: {
-		contentBase: "./public",
+		],
+		devtool: process.env.WEBPACK_DEVTOOL || 'cheap-module-source-map',
+		output: {
+			path: path.join(__dirname, 'public'),
+			filename: 'bundle.js'
+		},
+		resolve: {
+			extensions: ['', '.js', '.jsx']
+		},
+		module: {
+			loaders
+		},
+		devServer: {
+			contentBase: "./public",
 		// do not print bundle build stats
 		noInfo: true,
 		quiet: true,
@@ -59,11 +59,11 @@ module.exports = {
 		host: HOST
 	},
 	plugins: [
-		new DashboardPlugin(dashboard.setData),
-		new webpack.NoErrorsPlugin(),
-		new webpack.HotModuleReplacementPlugin(),
-		new HtmlWebpackPlugin({
-			template: './src/index.html'
-		})
+	new DashboardPlugin(dashboard.setData),
+	new webpack.NoErrorsPlugin(),
+	new webpack.HotModuleReplacementPlugin(),
+	new HtmlWebpackPlugin({
+		template: './src/index.html'
+	})
 	]
 };
