@@ -48,7 +48,10 @@ export class ServiceDisruptionList extends Component {
       });
     })
     .catch(function (error) {
-      console.log(error);
+      self.setState({
+        toastOpen: true,
+        toastMessage: "Error fetching the results. Please check if server is running!"
+      });
     });
   }
 
