@@ -5,6 +5,7 @@ import MenuItem from 'material-ui/MenuItem';
 import TextField from 'material-ui/TextField';
 import data from './data.js';
 import RaisedButton from 'material-ui/RaisedButton';
+import Snackbar from 'material-ui/Snackbar';
 
 const styles = {
   customWidth: {
@@ -22,12 +23,20 @@ export class ServiceDisruptionForm extends Component {
       toStation: props.location.query.toStation ? parseInt(props.location.query.toStation -1) : null,
       description: '' || props.location.query.description
       submit: false,
+      toastOpen: false,
+      toastMessage: ""
     };
     this.addDisruption = this.addDisruption.bind(this);
+    this.handleRequestClose = this.handleRequestClose.bind(this);
   }
 
   addDisruption(){
     this.props.onSubmit(this.state);
+  }
+  handleRequestClose(){
+    this.setState({
+      toastOpen: false,
+    });
   }
 
   handleChange(key, e, index, value){
@@ -101,6 +110,12 @@ export class ServiceDisruptionForm extends Component {
                 </div>
               </div>
               <div className="row center ">
+                <Snackbar
+                  open={this.state.toastOpen}
+                  message={this.state.toastMessage}
+                  autoHideDuration={4000}
+                  onRequestClose={this.handleRequestClose}
+                />
                 <RaisedButton
                   label="Add Service Disruption"
                   className="waves-effect waves-light"
