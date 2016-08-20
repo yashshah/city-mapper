@@ -32,34 +32,66 @@ You're all set! Server is running on [http://127.0.0.1:8000/](http://127.0.0.1:8
 
 Frontend is designed using material-ui. To run it, go through the following steps:    
 
+### To run
 
-### Install the node packages by running following command:
+* You'll need to have [git](https://git-scm.com/) and [node](https://nodejs.org/en/) installed in your system.
+* Fork and clone the project:
+
 ```
-npm install
-```   
-
-### Start the node.js server:
+> $ git clone https://github.com/yashshah/city-mapper
 ```
-npm start
-```    
 
-Frontend module be viewed at [http://localhost:8888](http://localhost:8888).   
+* Then install the dependencies:
 
-### Building the project:
 ```
-npm run build
-```    
+> $ npm install
+```
+
+* Run development server:
+
+```
+> $ npm start
+```
+
+Open the web browser to `http://localhost:8888/`
+
 
 [http://g.recordit.co/ZYZKIlCXGc.gif](http://g.recordit.co/ZYZKIlCXGc.gif)    
 ![http://g.recordit.co/ZYZKIlCXGc.gif](http://g.recordit.co/ZYZKIlCXGc.gif)    
 
-### Responsive
+
+
+### Responsive View
 
 ![http://g.recordit.co/gWJPnOujOo.gif](http://g.recordit.co/gWJPnOujOo.gif)      
 
-## Error Handling
+### Error Handling
 [http://g.recordit.co/BD0Ux8fyIN.gif](http://g.recordit.co/BD0Ux8fyIN.gif)          
 ![http://g.recordit.co/BD0Ux8fyIN.gif](http://g.recordit.co/BD0Ux8fyIN.gif)      
 
 
+### To build production package
+
+```
+> $ npm run build
+```   
+
+
+### Eslint
+There is a .eslint.yaml config for eslint ready with React plugin.
+To use it, you need to install additional dependencies though:
+
+```
+> npm install --save-dev eslint eslint-plugin-react
+```
+
+To do the actual linting, run:
+
+```
+> npm run lint
+```
+
+### Notes on importing css styles
+* styles having /src/styles/ in their absolute path are considered part of the application and exported as local css modules.
+* styles having /node_modules|global/ in their absolute path are considered global styles used by many components and are included in the css bundle directly.    
 
