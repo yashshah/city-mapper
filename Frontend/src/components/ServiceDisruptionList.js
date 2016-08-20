@@ -5,6 +5,7 @@ import Subheader from 'material-ui/Subheader';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 import {CardItem} from './CardItem';
 import serviceDisruptionData from './database.js'
+import Snackbar from 'material-ui/Snackbar';
 
 const styles = {
   root: {
@@ -23,10 +24,18 @@ export class ServiceDisruptionList extends Component {
     this.state = {
       deleteDialogOpen: false,
       items: serviceDisruptionData.serviceDisruption
+      toastOpen: props.location.query.submit ? true : false,
+      toastMessage: "Service disruption saved successfully!",
     }
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleRequestClose = this.handleRequestClose.bind(this);
   }
 
+  handleRequestClose(){
+    this.setState({
+      toastOpen: false,
+    });
+  }
 
   handleDelete(data){
     let updatedItems = this.state.items;
@@ -48,6 +57,12 @@ export class ServiceDisruptionList extends Component {
             <CardItem data={data} onDelete={this.handleDelete} />
           </div>
         ))}
+        <Snackbar
+          open={this.state.toastOpen}
+          message={this.state.toastMessage}
+          autoHideDuration={4000}
+          onRequestClose={this.handleRequestClose}
+        />
       </div>
     )
   }
