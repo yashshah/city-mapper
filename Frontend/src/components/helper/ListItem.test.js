@@ -15,7 +15,7 @@ function setup() {
   return shallow(<ListItem data={item} />);
 }
 
-describe('Service Disruption Form', () => {
+describe('List Item component', () => {
 
   it('should render StationView', () => {
     let wrapper = setup();
@@ -27,7 +27,6 @@ describe('Service Disruption Form', () => {
     expect(wrapper.find('FlatButton').at(0).prop('label')).toBe('Edit');
     expect(wrapper.find('FlatButton').at(1).prop('label')).toBe('Delete');
   });
-
 
   it('Should open Delete dialog on Delete button click', () => {
     let wrapper = setup();
