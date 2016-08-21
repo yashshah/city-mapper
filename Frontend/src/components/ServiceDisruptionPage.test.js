@@ -22,7 +22,6 @@ describe('Index', () => {
   });
   it('should contain muiTheme prop', () => {
     let wrapper = shallow(<ServiceDisruptionPage />);
-    console.log(wrapper.find('MuiThemeProvider').prop('muiTheme'))
     expect(wrapper.find('MuiThemeProvider').prop('muiTheme')).toExist();
   });
 });
