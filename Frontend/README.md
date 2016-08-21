@@ -40,6 +40,12 @@ Open the web browser to `http://localhost:8888/`
 ![http://g.recordit.co/BD0Ux8fyIN.gif](http://g.recordit.co/BD0Ux8fyIN.gif)      
 
 
+### To run the tests
+
+```
+> $ npm run test
+```   
+
 ### To build production package
 
 ```
