@@ -1,7 +1,7 @@
 import React from 'react';
 import expect from 'expect';
 import {ServiceDisruptionList} from './ServiceDisruptionList';
-import {mount, shallow} from 'enzyme';
+import {shallow} from 'enzyme';
 
 let item = {
   "id": 2,

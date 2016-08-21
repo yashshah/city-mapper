@@ -1,7 +1,7 @@
 import React from 'react';
 import expect from 'expect';
 import {ServiceDisruptionPage} from './ServiceDisruptionPage';
-import {mount, shallow} from 'enzyme';
+import {shallow} from 'enzyme';
 
 describe('Service Disruption Page', () => {
 

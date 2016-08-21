@@ -1,7 +1,7 @@
 import React from 'react';
 import expect from 'expect';
 import {ManageServiceDisruption} from './ManageServiceDisruption';
-import {mount, shallow} from 'enzyme';
+import {shallow} from 'enzyme';
 
 describe('Manage Service Disruption component', () => {
   it('should render ServiceDisruptionForm', () => {
