@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack --config webpack.production.config.js --progress --profile --colors",
     "start": "webpack-dev-server --profile --colors",
-    "lint": "eslint --ext js --ext jsx src || exit 0"
+    "lint": "eslint --ext js --ext jsx src || exit 0",
+    "test": "mocha --reporter progress webpack.test.config.js \"src/**/*.test.js\""
   },
   "repository": {
     "type": "git",
